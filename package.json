@@ -1,0 +1,10 @@
+{
+  "name": "studio-gemelli",
+  "version": "1.0.0",
+   "scripts": {
+    "start": "concurrently \"cd ./server && yarn run server\" \"cd ./client && yarn run dev\""
+  },
+  "dependencies": {
+    "concurrently": "^7.6.0"
+  }
+}
