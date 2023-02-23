@@ -1,32 +1,28 @@
 import axios from "axios";
 import { useState } from "react";
 
+// import components
+
+import Banner from "./components/Banner";
+import Testimonials from "./components/Testimonials";
+import Skills from "./components/Skills";
+import Team from "./components/Team";
+import Subscribe from "./components/Subscribe";
+import Contact from "./components/Contact";
+import Footer from "./components/Footer";
+import BackToTop from "./components/BackToTop";
+
 function App() {
-    const [data, setData] = useState();
-    const urlWithProxy = "/api/v1";
-
-    function getDataFromServer() {
-        axios
-            .get(urlWithProxy)
-            .then((res) => setData(res.data))
-            .catch((err) => {
-                console.error(err);
-            });
-    }
-
     return (
-        <div className='flex flex-col justify-center items-center h-screen'>
-            <div>
-                <button
-                    className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'
-                    onClick={getDataFromServer}
-                >
-                    Access server using proxy
-                </button>
-            </div>
-            <div>
-                <p>data : {data}</p>
-            </div>
+        <div>
+            <Banner />
+            <Testimonials />
+            <Skills />
+            <Team />
+            <Subscribe />
+            <Contact />
+            <Footer />
+            <BackToTop />
         </div>
     );
 }
